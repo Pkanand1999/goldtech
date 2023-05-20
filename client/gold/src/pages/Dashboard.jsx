@@ -12,6 +12,7 @@ import {
     Button,
     Modal,
   } from '@chakra-ui/react'
+  import {Link} from 'react-router-dom'
 
 export default function Dashboard() {
     const [data,setData]=useState([])
@@ -53,7 +54,7 @@ async function fetching(page) {
             <Td>{data.name}</Td>
             <Td >{data.email}</Td>
             <Td bg="grey" >Edit</Td>
-            <Td bg="lightGreen">view</Td>
+            <Td bg="lightGreen"><Link to={`/userdetails/${data.id}`}>view</Link></Td>
           </Tr>
         })}
       

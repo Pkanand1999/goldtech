@@ -1,7 +1,16 @@
-import React from 'react'
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import ViewDetail from "../pages/ViewDetail";
+import Dashboard from "../pages/Dashboard";
 
-export default function router() {
+
+const Router = () => {
   return (
-    <div></div>
-  )
-}
+    <Routes>
+      <Route path="userdetails/:id" element={<ViewDetail />} />
+      <Route path="/" element={<Dashboard />} />
+    </Routes>
+  );
+};
+
+export default Router;
