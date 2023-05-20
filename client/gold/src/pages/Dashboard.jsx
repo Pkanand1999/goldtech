@@ -50,10 +50,10 @@ async function fetching(page) {
     <Tbody >
         {data.map((data,ind)=>{
             return <Tr textAlign="center" border="4px solid green" bg="pink" Key={ind}>
-            <Td padding="2% 1%">{ind+1}</Td>
+            <Td padding="2% 1%">{(ind+1)+(10*page-1)-10+1}</Td>
             <Td>{data.name}</Td>
             <Td >{data.email}</Td>
-            <Td bg="grey" >Edit</Td>
+            <Td bg="grey" ><Link to={`/editdetails/${data.id}`}>Edit</Link></Td>
             <Td bg="lightGreen"><Link to={`/userdetails/${data.id}`}>view</Link></Td>
           </Tr>
         })}
