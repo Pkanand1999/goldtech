@@ -10,6 +10,7 @@ import {
     TableContainer,
     Box,
     Button,
+    Modal,
   } from '@chakra-ui/react'
 
 export default function Dashboard() {
@@ -51,7 +52,7 @@ async function fetching(page) {
             <Td padding="2% 1%">{ind+1}</Td>
             <Td>{data.name}</Td>
             <Td >{data.email}</Td>
-            <Td bg="grey">edit</Td>
+            <Td bg="grey" >Edit</Td>
             <Td bg="lightGreen">view</Td>
           </Tr>
         })}
@@ -59,6 +60,7 @@ async function fetching(page) {
     </Tbody>
   </Table>
 </TableContainer>
+
 <Box display="flex"  margin="5% 50%" justifyContent="center" alignItem="center">
     <Button marginRight="20px" borderRadius="5px" padding="10px" border="none" isDisabled={page===1? true:false} onClick={()=>setPage(page-1)}>←Pre</Button> {page} 
     <Button borderRadius="10px" padding="10px"  marginLeft="20px" border="none" isDisabled={page===10? true:false} onClick={()=>setPage(page+1)}>Next→</Button>
